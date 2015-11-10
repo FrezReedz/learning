@@ -19,12 +19,14 @@ include "includes/cabecera.php";
 </ul>
 
 <p> Seleccionar tema</p>
-<form style="margin:0 auto;" action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
-	<select name="cambiartema" id="cambiartema">
-		<option value="luminoso">Luminoso</option>
-		<option value="oscuro">Oscuro</option>
-	</select>
-	<input type="submit" name="tema" value="Aceptar">
+<form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
+	<table>
+		<tr>
+		<td><input type="radio" name="cambiartema" value="luminoso">Luminoso</td>
+		<td><input type="radio" name="cambiartema" value="oscuro">Oscuro</td>
+		<td><input type="submit" name="tema" value="Aceptar"></td>
+		</tr>
+	</table>
 </form> 
 
 <?php

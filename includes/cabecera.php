@@ -23,9 +23,15 @@ $usuario =  recuperar_usuario($_SESSION["login_user"]);
 			</div>
 			<p class="header">
 				<a href="index.php" ><img class="logo"src="includes/img/php-logo.png"></a>
-				Ejercicios PHP</p>
-			
+				Ejercicios PHP
+			</p>
+			<div class="nav">
+				<a class="nav" href="noticias.php">Noticias</a>
+				<a class="nav" href="contacto.php">Contacto</a>
+				<a class="nav" href="about.php">About</a>
+			</div>
 		</header>
+
 		<div class="wrap">
 		<aside>
 				<ul>
@@ -41,6 +47,7 @@ $usuario =  recuperar_usuario($_SESSION["login_user"]);
 					<li><a href="http://www.geekgumbo.com/2014/11/12/php-validation-with-filter_var/" target"_blank">Validation faq</a></li>
 					<li><a href="http://www.phptherightway.com/#data_filtering" target="_blank">The Right Way</a></li>
 					<li><a href="http://foaa.de/blog/2012/11/27/php-validation-and-sanitization/#how-to-employ" target="_blank">++Sanitization Validation</a></li>
+					<li><a href="http://hex.colorrrs.com/" target="_blank">HEX to RGB</a></li>
 				</ul>
 		</aside>
 		
