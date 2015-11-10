@@ -120,6 +120,7 @@ th{
 	padding: 10px;
 }
 td{
+	text-align: center;
 	padding: 5px;
 }
 ul{
@@ -137,6 +138,24 @@ li{
 }
 li:hover{
 	box-shadow: 10px 10px 7px -7px rgba(0,0,0,0.75);
+}
+ul.perfil{
+	border-right: 1px black solid;
+	border-collapse: collapse;
+	text-align: right;
+	width: 25%;
+	float: left;
+}
+ul.perfil li:hover{
+	box-shadow: none;
+}
+ul.fotoperfil{
+	text-align: left;
+	width: 70%;
+	float: right;
+}
+ul.fotoperfil li:hover{
+	box-shadow: none;
 }
 button{
 	float: right;
@@ -186,13 +205,17 @@ div.nav{
 	clear: both;
 }
 div.wrap{
-	height: 73.2%;
+	height: 72%;
 	padding-top: 130px;
+	margin: 0;
 	clear: both;
 	padding-bottom: 5%;
 }
 input{
 	display: block;
+}
+input.inline{
+	display: inline;
 }
 label{
 	display: block;
@@ -203,4 +226,12 @@ span.errorform{
 }
 span.footer{
 	font-size: 90%;
+}
+hr{
+	color: black;
+	clear: both;
+}
+#fotoperfil{
+	float: right;
+	border-radius: 50%;
 }

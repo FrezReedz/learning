@@ -145,14 +145,14 @@ function cargar_estilo(){
 
 function cargar_topbar(){
 
-			if (!isset($_SESSION["nick"]) || $_SESSION["nick"] == "") {
+			if (!isset($_SESSION["login_user"]) || $_SESSION["login_user"] == "") {
 		?>
 				<a class="cabecera" href="registro.php">Register</a>
 				<a class="cabecera" href="login.php">Login</a>
 		<?php
 			}else{
 		?>		
-				<a class="cabecera" href="perfil.php"> <?=ucfirst(strtolower($usuario["nick"])); ?></a>
+				<a class="cabecera" href="perfil.php"> <?=ucfirst(strtolower($_SESSION["login_user"])); ?></a>
 				<a class="cabecera" href="logout.php">Log-out</a>
 		<?php
 			}

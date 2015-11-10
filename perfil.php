@@ -4,23 +4,37 @@ ob_start();
 include "includes/cabecera.php";
 
 ?>
-
+<article>
 <h2>Perfil de <?=ucwords(strtolower($usuario["nombre"])); ?></h2>
 
-<ul>
+<ul class="perfil">
 	<li><?=ucfirst(strtolower($usuario["nombre"])); ?></li>
 	<li><?=ucwords(strtolower($usuario["apellidos"])); ?></li>
 	<li><?=ucfirst(strtolower($usuario["correo"])); ?></li>
 	<li><?=ucfirst(strtolower($usuario["cp"])); ?></li>
 	<li><?=ucfirst(strtolower($usuario["nick"])); ?></li>
-	<li><input type="button" name="editar" value="Editar Perfil"></li>
-	<li><input type="button" name="borrar" value="Eliminar cuenta"></li>
-	<li><input type="button" name="cambiar_pass" value="Cambiar Contraseña"></li>
+	<li><input class="inline" type="button" name="editar" value="Editar Perfil">
+	<input class="inline" type="button" name="borrar" value="Eliminar cuenta">
+	<input class="inline" type="button" name="cambiar_pass" value="Cambiar Contraseña"></li>
 </ul>
-
-<p> Seleccionar tema</p>
 <form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
+<ul class="fotoperfil">
+
+	<img id="fotoperfil" src="includes/img/avatar.png" alt="Ávatar">
+	
+	<li>Foto de perfil</li>
+	<li><input type="file" name="foto"></li>
+	<li><input type="submit" name="fotoperfil" value="Subir Foto"></li>
+</ul>
+</form>
+	
+
+</article>
+<br>
+<hr>
+<form class="tema" action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
 	<table>
+		<tr><td colspan="3">Seleccionar tema</td></tr>
 		<tr>
 		<td><input type="radio" name="cambiartema" value="luminoso">Luminoso</td>
 		<td><input type="radio" name="cambiartema" value="oscuro">Oscuro</td>

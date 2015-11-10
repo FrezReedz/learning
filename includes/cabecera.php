@@ -1,7 +1,8 @@
 <?php 
 session_start();
 include_once "includes/funciones.php";
-if(isset($_SESSION["login_user"]) && ($_SESSION["login_user"] != "")){
+
+if(isset($_SESSION["login_user"])){
 	$usuario =  recuperar_usuario($_SESSION["login_user"]);
 }
 
