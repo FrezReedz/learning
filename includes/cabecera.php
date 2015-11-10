@@ -1,10 +1,14 @@
 <?php 
 session_start();
-$_SESSION["login_user"];
-$_SESSION["tema"];
 include_once "includes/funciones.php";
+if(isset($_SESSION["login_user"]) && ($_SESSION["login_user"] != "")){
+	$usuario =  recuperar_usuario($_SESSION["login_user"]);
+}
 
-$usuario =  recuperar_usuario($_SESSION["login_user"]);
+if (!isset($_SESSION["tema"])) {
+	$_SESSION["tema"] = "";
+}
+
 ?>
 
 <!DOCUTYPE html>
@@ -19,7 +23,7 @@ $usuario =  recuperar_usuario($_SESSION["login_user"]);
 	<body>
 		<header>
 			<div class="topbar">
-				<?php cargar_topbar($usuario);?>		
+				<?php cargar_topbar();?>		
 			</div>
 			<p class="header">
 				<a href="index.php" ><img class="logo"src="includes/img/php-logo.png"></a>
