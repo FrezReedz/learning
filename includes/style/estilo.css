@@ -24,6 +24,7 @@ header{
 	float:left;
 	height: 65%;
 	padding-left: 18px;
+	opacity: 1;
 }
 p.header{
 	font-size: 350%;
@@ -49,8 +50,14 @@ aside{
 	float: left;
 	height: 100%;
 	position:fixed;
-	opacity: transparent;
 	border-right: 1px solid gray;
+	background-color: #eeeeee;
+	transform: translateX(-87%);
+	transition: transform .4s ease-out;
+}
+aside:hover{
+	transform: translateX(0);
+	transition: transform .4s ease-out;
 }
 footer{
 	color:white;

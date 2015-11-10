@@ -25,6 +25,7 @@ header{
 	float:left;
 	height: 65%;
 	padding-left: 18px;
+	opacity: 1 !important;
 }
 p.header{
 	color: white;
@@ -53,9 +54,12 @@ aside{
 	position:fixed;
 	opacity: transparent;
 	border-right: 1px solid gray;
-	/*esto es una chulería para ocultarlo 90% a la izquierda y luego al hover mostrarlo
-	transform: translateX(-90%);
-	transition: transform .4s ease-out;     */
+	transform: translateX(-87%);
+	transition: transform .4s ease-out;
+}
+aside:hover{
+	transform: translateX(0);
+	transition: transform .4s ease-out;
 }
 footer{
 	color:white;
