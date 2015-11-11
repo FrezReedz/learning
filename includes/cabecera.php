@@ -22,6 +22,7 @@ if (!isset($_SESSION["tema"])) {
 	</head>
 
 	<body>
+	<div class="container">
 		<header>
 			<div class="topbar">
 				<?php cargar_topbar();?>		
@@ -37,7 +38,7 @@ if (!isset($_SESSION["tema"])) {
 			</div>
 		</header>
 
-		<div class="wrap">
+		<div class="cuerpo">
 		<aside>
 				<ul>
 					<li><a href="http://php.net/manual/es/" target="_blank">PHP.net Castellano</a></li>

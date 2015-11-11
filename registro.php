@@ -20,6 +20,7 @@ if(!$_POST) {
 
 
 	}else{
+		var_dump($errores);
 		include "includes/formulario.php";
 	}
 

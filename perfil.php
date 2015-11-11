@@ -17,17 +17,11 @@ include "includes/cabecera.php";
 	<input class="inline" type="button" name="borrar" value="Eliminar cuenta">
 	<input class="inline" type="button" name="cambiar_pass" value="Cambiar Contraseña"></li>
 </ul>
-<form action="<?=$_SERVER["PHP_SELF"];?>" method="POST">
-<ul class="fotoperfil">
 
-	<img id="fotoperfil" src="includes/img/avatar.png" alt="Ávatar">
-	
-	<li>Foto de perfil</li>
-	<li><input type="file" name="foto"></li>
-	<li><input type="submit" name="fotoperfil" value="Subir Foto"></li>
-</ul>
-</form>
-	
+<?php 
+	$error = $_GET["errores"];
+	include "includes/formulario_foto.php"; 
+?>	
 
 </article>
 <br>
@@ -44,7 +38,7 @@ include "includes/cabecera.php";
 </form> 
 
 <?php
-
+$errores = [];
 //header redirije a la misma página actual, request uri, se necesita ob_start() para actualizar con los datos nuevos
 if(isset($_POST["tema"])){
 	if($_POST["cambiartema"] == "oscuro"){
@@ -55,6 +49,19 @@ if(isset($_POST["tema"])){
 		$_SESSION["tema"] = "luminoso";
 		setCookie("css", $_SESSION["tema"], time() + 5184000);
 		header('Location: '.$_SERVER['REQUEST_URI']);
+	}
+}
+
+if(isset($_POST["fotoperfil"])){
+	var_dump($_FILES["foto"]);
+	
+	include "includes/validar_foto.php";
+	if (!$errores) {
+		echo "<br>No hay errores en la foto";
+	}else{
+		
+		//include "includes/error_foto.php";
+		header('Location: perfil.php?errores=' . $errores["subida"]);
 	}
 }
 

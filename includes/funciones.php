@@ -8,13 +8,6 @@ function recordar($campo){
 }
 
 
-function mostrar_errores($campo){
-	if(isset($errores[$campo])) {
-		echo 'value = "' . trim($errores[$campo]) . '"' ;
-	}
-}
-
-
 function conexion(){
 	
 	$conex = mysqli_connect("localhost", "root", "", "webprueba");
@@ -159,6 +152,49 @@ function cargar_topbar(){
 		
 }
 
+
+
+function foto_perfil(){
+
+	$fichero = "C:\WT-NMP\uploads\\" . $_SESSION["login_user"] . ".jpg";
+	$nombre = "../../uploads/" . $_SESSION["login_user"] . ".jpg";
+	var_dump($fichero);
+
+	//$fichero = resize_image($fichero, 200, 200);
+
+	if (file_exists($fichero)) {
+		echo "<img id='fotoperfil' src='$nombre' alt='Ávatar'>";
+	}else{
+		echo "<img id='fotoperfil' src='includes/img/avatar.png' alt='por defecto'>";
+	}
+}
+/*
+function resize_image($file, $w, $h, $crop=FALSE) {
+    list($width, $height) = getimagesize($file);
+    $r = $width / $height;
+    if ($crop) {
+        if ($width > $height) {
+            $width = ceil($width-($width*abs($r-$w/$h)));
+        } else {
+            $height = ceil($height-($height*abs($r-$w/$h)));
+        }
+        $newwidth = $w;
+        $newheight = $h;
+    } else {
+        if ($w/$h > $r) {
+            $newwidth = $h*$r;
+            $newheight = $h;
+        } else {
+            $newheight = $w/$r;
+            $newwidth = $w;
+        }
+    }
+    $src = imagecreatefromjpeg($file);
+    $dst = imagecreatetruecolor($newwidth, $newheight);
+    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+    return $dst;
+}
 //actualmente sin usar 
 /*
 function contador_visitas(){
