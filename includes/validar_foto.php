@@ -1,7 +1,7 @@
 <?php
 //Estoy recibiendo datos por $_POST
 $tam_max = 2 * 1024 * 1024; //declaramos como tam maximo 2 MB 
-$carpeta = "C:\WT-NMP\uploads\\"; 
+$carpeta = "./includes/img/fotosperfil/"; 
 
 
 //Lo primero es comprobar si recibimos algún fichero 

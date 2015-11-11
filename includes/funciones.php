@@ -156,14 +156,17 @@ function cargar_topbar(){
 
 function foto_perfil(){
 
-	$fichero = "C:\WT-NMP\uploads\\" . $_SESSION["login_user"] . ".jpg";
-	$nombre = "../../uploads/" . $_SESSION["login_user"] . ".jpg";
-	var_dump($fichero);
+	$fichero = "./includes/img/fotosperfil/" . $_SESSION["login_user"] . ".jpg";
 
-	//$fichero = resize_image($fichero, 200, 200);
+	if (!file_exists("./includes/img/fotosperfil")) {
+    mkdir("./includes/img/fotosperfil", 0755, true);
+	}else{
+		$errores["subida"] = "No se pudo crear el directorio de subida"
+	}
+
 
 	if (file_exists($fichero)) {
-		echo "<img id='fotoperfil' src='$nombre' alt='Ávatar'>";
+		echo "<img id='fotoperfil' src='$fichero' alt='Ávatar'>";
 	}else{
 		echo "<img id='fotoperfil' src='includes/img/avatar.png' alt='por defecto'>";
 	}
@@ -195,6 +198,11 @@ function resize_image($file, $w, $h, $crop=FALSE) {
 
     return $dst;
 }
+
+
+	//$fichero = resize_image($fichero, 200, 200);
+
+
 //actualmente sin usar 
 /*
 function contador_visitas(){
