@@ -164,9 +164,17 @@ function cargar_topbar(){
 function fotoicon(){
 
 	if (isset($_SESSION["login_user"])) {
-		$src = "includes/img/fotosperfil/" . $_SESSION['login_user'] . ".jpg"; ?>
-		<a href="perfil.php"><img id="fotoicon" src="<?=$src ?>"/></a>
-		<?php
+		$src = "includes/img/fotosperfil/" . $_SESSION['login_user'] . ".jpg"; 
+		if (file_exists($src)) {
+			?>
+			<a href="perfil.php"><img id="fotoicon" src="<?=$src ?>"/></a>	
+			<?php
+		}else{
+			?>
+			<a href="perfil.php"><img id="fotoicon" src="includes/img/avatar.png"/></a>
+			<?php
+		}
+		
 	}
 	
 }

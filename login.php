@@ -19,7 +19,8 @@ if(isset($_SESSION["login_user"])){
 
 		include "includes/validar.php";
 		if(!$errores){
-			$_SESSION["login_user"] = trim($_POST["login"]);
+			$login_nick = recuperar_usuario($_POST["login"]);
+			$_SESSION["login_user"] = trim($login_nick["nick"]);
 			include "includes/login_correcto.php";
 		}else{
 			include "includes/form_login.php";
