@@ -7,12 +7,12 @@
 		<tr>
 			<td><label for="login">Usuario</label></td>
 			<td><input type="text" name="login" placeholder="Nick o correo" <?= recordar("login"); ?> >
-			<span class="errorform"><?php echo $errores["login"]; ?> </span>  </td>
+			<span class="errorform"><?php if($errores){ mostrar_error("login", $errores); } ?> </span>  </td>
 		</tr>
 		<tr>
 			<td><label for="contrasenya">Contraseña</label></td>
 			<td><input type="password" name="contrasenya" placeholder="Escriba su contraseña" value="">
-			<span class="errorform"><?php echo $errores["contrasenya"]; ?> </span>   </td>
+			<span class="errorform"><?php mostrar_error("contrasenya", $errores); ?> </span>   </td>
 		</tr>
 		<tr>
 			<td><input type="submit" name="logear" value="Entrar"></td>

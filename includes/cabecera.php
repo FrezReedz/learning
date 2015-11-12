@@ -29,6 +29,7 @@ if (!isset($_SESSION["tema"])) {
 			</div>
 			<p class="header">
 				<a href="index.php" ><img class="logo"src="includes/img/php-logo.png"></a>
+				<?php fotoicon(); ?>
 				Ejercicios PHP
 			</p>
 			<div class="nav">
@@ -58,4 +59,5 @@ if (!isset($_SESSION["tema"])) {
 		</aside>
 		
 		<section>
+			
 	

@@ -2,25 +2,21 @@
 include "includes/funciones.php";
 include "includes/cabecera.php";
 
+$errores = [];
+
 if(!$_POST) {
 	include "includes/formulario.php";
 
 } else {
 
-
-	$errores = [];
-
 	include "includes/validar.php";
 
-
 	if(!$errores){
-
-		echo "<br><br>va bien";
+		
 		insertar($nombre, $apellidos, $correo, $codpos, $pass1, $nick);
 
 
 	}else{
-		var_dump($errores);
 		include "includes/formulario.php";
 	}
 

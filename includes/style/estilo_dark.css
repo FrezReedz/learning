@@ -34,7 +34,10 @@ h2{
 	font-weight: 700;
 	text-align: center;
 	padding: 30px 30px;
-
+}
+h3{
+	font-weight: 700;
+	text-align: center;
 }
 section{
 	padding: 0 4% 60px 4%;
@@ -78,6 +81,9 @@ p{
 	margin: inherit;
 	padding: 12px 0 0 0;
 }
+p.centrado{
+	text-align: center;
+}
 #resultado{
 	padding: 0 0 0 5%;
 	width: 20%;
@@ -115,6 +121,7 @@ table{
 }
 tr{}
 th{
+	background-color: rgba(0,0,0, 0.8);
 	text-align: center;
 	text-transform: capitalize;
 	padding-bottom: 15px;
@@ -177,6 +184,14 @@ a.nav{
 	display: inline;
 	color: white;
 	margin: 0 25px 0 0px;
+}
+a.perfil{
+	font-size: 70%;
+	font-weight: bold;
+}
+a.contacto{
+	display: inline;
+	margin: 0 1em;
 }
 a:link {
     color: white;
@@ -247,4 +262,17 @@ hr{
     width: 200px;
     height: 200px;
     overflow: hidden;
+}
+#fotoicon{
+	float: left;
+	margin: 3px 20px 10px 20px;
+	width: 40px;
+	height: 40px;
+	border: 2px white solid;
+	border-radius: 50%;
+}
+img.portada{
+	margin: auto;
+	clear: both;
+	position: relative;
 }

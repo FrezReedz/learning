@@ -13,13 +13,18 @@ include "includes/cabecera.php";
 	<li><?=ucfirst(strtolower($usuario["correo"])); ?></li>
 	<li><?=ucfirst(strtolower($usuario["cp"])); ?></li>
 	<li><?=ucfirst(strtolower($usuario["nick"])); ?></li>
-	<li><input class="inline" type="button" name="editar" value="Editar Perfil">
-	<input class="inline" type="button" name="borrar" value="Eliminar cuenta">
-	<input class="inline" type="button" name="cambiar_pass" value="Cambiar Contraseña"></li>
+	<li><a class="perfil" href="informe.php">Crear resumen (txt y email)</a>
+		<a class="perfil" href="editar_usuario.php">Editar perfil</a>
+		<a class="perfil" href="borrar_usuario.php">Eliminar cuenta</a>
+	</li>
 </ul>
 
 <?php 
-	$error = $_GET["errores"];
+	if(isset($_GET["errores"])){
+		$error = $_GET["errores"];
+	}
+
+	$errores = [];
 	include "includes/formulario_foto.php"; 
 ?>	
 
@@ -38,7 +43,7 @@ include "includes/cabecera.php";
 </form> 
 
 <?php
-$errores = [];
+
 //header redirije a la misma página actual, request uri, se necesita ob_start() para actualizar con los datos nuevos
 if(isset($_POST["tema"])){
 	if($_POST["cambiartema"] == "oscuro"){
@@ -64,6 +69,7 @@ if(isset($_POST["fotoperfil"])){
 		header('Location: perfil.php?errores=' . $errores["subida"]);
 	}
 }
-
+ 
 
 include "includes/pie.php";
+ob_end_flush();

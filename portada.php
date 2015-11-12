@@ -1,10 +1,12 @@
 <article>
 	
-	<h2>Increíble Página de  Pruebas</h2>
+	<h2>This is awesome</h2>
 	
-		<br><br>
+	<br>
+	<p class="centrado"><img src="includes/img/welcome.png" alt="welcome"></p>
+	<br>
 
-	<h2><a href="listado.php">Listar usuarios</a></h2>
+	<p class="centrado"><a href="listado.php">Listar usuarios</a><p>
 
 	
 

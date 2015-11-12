@@ -40,7 +40,7 @@ if(isset($_POST["registrar"])){
 			$errores['correo'] = "El correo ya está siendo usado";
 			}
 		}else{
-			$errores["correo2"] = "Los correos no coinciden.";
+			$errores["correo"] = "Los correos no coinciden.";
 		}
 	}else{
 		$errores["correo"] = "No has introducido ambos correos.";
@@ -86,7 +86,7 @@ if(isset($_POST["registrar"])){
 		
 		if(mb_strlen($nick) < 3) {
 			$errores['nick'] = "El Nick es demasiado corto";
-		}else if(!preg_match("/^([a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ]){3,29}$/i ", $nick)){
+		}else if(!preg_match("/^([a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\-\_]){3,29}$/i ", $nick)){
 			$errores['nick'] = "El Nick contiene carácteres no permitidos";
 		}else if(buscar_campo("nick", $nick) != 0){
 			$errores['nick'] = "El Nick ya está siendo usado";

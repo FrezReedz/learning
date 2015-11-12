@@ -8,6 +8,14 @@ function recordar($campo){
 }
 
 
+function mostrar_error($campo, $errores){
+
+	if(isset($errores[$campo])){
+		
+		echo $errores[$campo];
+	}
+}
+
 function conexion(){
 	
 	$conex = mysqli_connect("localhost", "root", "", "webprueba");
@@ -138,8 +146,8 @@ function cargar_estilo(){
 
 function cargar_topbar(){
 
-			if (!isset($_SESSION["login_user"]) || $_SESSION["login_user"] == "") {
-		?>
+			if (!isset($_SESSION["login_user"]) || $_SESSION["login_user"] == "") {				
+		?>				
 				<a class="cabecera" href="registro.php">Register</a>
 				<a class="cabecera" href="login.php">Login</a>
 		<?php
@@ -153,6 +161,17 @@ function cargar_topbar(){
 }
 
 
+function fotoicon(){
+
+	if (isset($_SESSION["login_user"])) {
+		$src = "includes/img/fotosperfil/" . $_SESSION['login_user'] . ".jpg"; ?>
+		<a href="perfil.php"><img id="fotoicon" src="<?=$src ?>"/></a>
+		<?php
+	}
+	
+}
+
+
 
 function foto_perfil(){
 
@@ -161,7 +180,7 @@ function foto_perfil(){
 	if (!file_exists("./includes/img/fotosperfil")) {
     mkdir("./includes/img/fotosperfil", 0755, true);
 	}else{
-		$errores["subida"] = "No se pudo crear el directorio de subida"
+		$errores["subida"] = "No se pudo crear el directorio de subida";
 	}
 
 

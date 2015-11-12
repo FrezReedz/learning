@@ -9,10 +9,13 @@ if(isset($_SESSION["login_user"])){
 	<h2><a href="logout.php">Log-out</a></h2>
 	<?php
 }else{
+
+	$errores = [];
+
 	if(!isset($_POST["logear"])){
 		include "includes/form_login.php";
 	}else{
-		$errores = [];
+		
 
 		include "includes/validar.php";
 		if(!$errores){

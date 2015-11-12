@@ -22,11 +22,11 @@ $res = mysqli_query($conex, $consulta);
 while($fila = mysqli_fetch_array($res)){
  ?>
         <tr>
-            <td><?=$fila["nombre"]?></td>
-            <td><?=$fila["apellidos"]?></td>
-            <td><?=$fila["correo"]?></td>
-            <td><?=$fila["cp"]?></td>
-            <td><?=$fila["nick"]?></td>
+            <td><?=ucwords(strtolower($fila["nombre"]))?></td>
+            <td><?=ucwords(strtolower($fila["apellidos"]))?></td>
+            <td><?=ucwords(strtolower($fila["correo"]))?></td>
+            <td><?=ucwords(strtolower($fila["cp"]))?></td>
+            <td><?=ucwords(strtolower($fila["nick"]))?></td>
         </tr>
         <?php
     }
@@ -38,6 +38,7 @@ while($fila = mysqli_fetch_array($res)){
 <p style="text-align:center;"><a href="index.php">Volver a Portada</a></p>
 
 <?php
+
 
 cerrar_conex($conex);
 
