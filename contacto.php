@@ -1,4 +1,5 @@
 <?php
+	$thisPage="contacto";
 	include "includes/cabecera.php";
 
 ?>			

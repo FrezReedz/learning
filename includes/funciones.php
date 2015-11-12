@@ -103,7 +103,7 @@ function recuperar_usuario($login){
 		cerrar_conex($conex);
 		return $res;
 
-	}elseif(preg_match("/^([a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ]){3,29}$/i ", $login)){
+	}elseif(preg_match("/^([a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ\-\_]){3,29}$/i ", $login)){
 		$campo = "nick";
 		$valor = strtoupper(mysqli_real_escape_string($conex, $login));
 		$campo_existente = "SELECT id, nombre, apellidos, correo, cp, nick from usuario where ".$campo." = '".$valor."'";

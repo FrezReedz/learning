@@ -9,7 +9,6 @@ if(isset($_SESSION["login_user"])){
 if (!isset($_SESSION["tema"])) {
 	$_SESSION["tema"] = "";
 }
-
 ?>
 
 <!DOCUTYPE html>
@@ -30,13 +29,9 @@ if (!isset($_SESSION["tema"])) {
 			<p class="header">
 				<a href="index.php" ><img class="logo"src="includes/img/php-logo.png"></a>
 				<?php fotoicon(); ?>
-				Ejercicios PHP
+				Secret WEB
 			</p>
-			<div class="nav">
-				<a class="nav" href="noticias.php">Noticias</a>
-				<a class="nav" href="contacto.php">Contacto</a>
-				<a class="nav" href="about.php">About</a>
-			</div>
+			<?php include "includes/nav.php"; ?>
 		</header>
 
 		<div class="cuerpo">
