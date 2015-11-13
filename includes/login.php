@@ -8,7 +8,7 @@ if(!isset($_POST["logear"])){
 }else{
 	$errores = [];
 
-	include "includes/validar_login.php";
+	include "includes/validar.php";
 }
 
 
